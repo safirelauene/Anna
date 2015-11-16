@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet id="10" author="Safire">
+		<createTable tableName="ANNA_AMIZADE">
+			<column name="AMI_ID" type="java.sql.Types.BIGINT"/>
+			<column name="AMI_IDUSUARIO1" type="java.sql.Types.BIGINT"/>
+			<column name="AMI_IDUSUARIO2" type="java.sql.Types.BIGINT"/>	
+		</createTable>
+	</changeSet>
+		<changeSet id="20" author="Safire">
+		<addPrimaryKey columnNames="AMI_ID" tableName="ANNA_AMIZADE"/>
+		<addForeignKeyConstraint constraintName="FK_AMI_IDUSUARIO1" referencedTableName="ANNA_USUARIO" baseColumnNames="USU_ID" baseTableName="ANNA_AMIZADE" referencedColumnNames="AMI_IDUSUARIO1"/>
+		<addForeignKeyConstraint constraintName="FK_AMI_IDUSUARIO2" referencedTableName="ANNA_USUARIO" baseColumnNames="USU_ID" baseTableName="ANNA_AMIZADE" referencedColumnNames="AMI_IDUSUARIO2"/>
+	</changeSet>
+
+</databaseChangeLog>

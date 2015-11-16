@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet id="10" author="safire">
+		<createTable tableName="ANNA_USUARIO_GRUPO">
+			
+			<column name="USUARIO_GRUPO_IDUSUARIO" type="java.sql.Types.BIGINT"/>
+			<column name="USUARIO_GRUPO_IDGRUPO" type="java.sql.Types.BIGINT"/>
+			<column name="USUARIO_GRUPO_DESC" type="java.sql.Types.NVARCHAR(50)"/>
+			<column name="USUARIO_GRUPO_DATA" type="java.sql.Types.Date"/>
+		</createTable>
+	</changeSet>
+	
+	<changeSet id="20" author="safire">
+		<addPrimaryKey columnNames="USUARIO_GRUPO_IDUSUARIO" tableName="ANNA_USUARIO_GRUPO"/>
+		<addPrimaryKey columnNames="USUARIO_GRUPO_IDGRUPO" tableName="ANNA_USUARIO_GRUPO"/>
+		<addForeignKeyConstraint constraintName="FK_USUARIO_GRUPO_IDUSUARIO" referencedTableName="ANNA_USUARIO" baseColumnNames="USUARIO_GRUPO_IDUSUARIO" baseTableName="ANNA_USUARIO_GRUPO" referencedColumnNames="USU_ID"/>
+		<addForeignKeyConstraint constraintName="FK_USUARIO_GRUPO_IDGRUPO" referencedTableName="ANNA_GRUPO" baseColumnNames="USUARIO_GRUPO_IDGRUPO" baseTableName="ANNA_USUARIO_GRUPO" referencedColumnNames="GRU_ID"/>
+	</changeSet>
+</databaseChangeLog>

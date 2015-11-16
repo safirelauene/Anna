@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+	<include file="br/com/fatec/academia/liquibase/inicial/inicial-gerador_IDS.xml"/>
+	<include file="br/com/fatec/academia/liquibase/inicial/inicial-usuario.xml"/>
+	<include file="br/com/fatec/academia/liquibase/inicial/inicial-role.xml"/>
+	<include file="br/com/fatec/academia/liquibase/inicial/inicial-grupo.xml"/>
+	<include file="br/com/fatec/academia/liquibase/inicial/inicial-post.xml"/>
+	<include file="br/com/fatec/academia/liquibase/inicial/inicial-comentario.xml"/>
+	<include file="br/com/fatec/academia/liquibase/inicial/inicial-curtir.xml"/>
+	<include file="br/com/fatec/academia/liquibase/inicial/inicial-amizade.xml"/>
+	<include file="br/com/fatec/academia/liquibase/inicial/inicial-usuario-grupo.xml"/>
+
+</databaseChangeLog>

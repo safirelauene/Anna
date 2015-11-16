@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet id="10" author="safire">
+		<createTable tableName="ANNA_USUARIO">
+			<column name="USU_ID" type="java.sql.Types.BIGINT"/>
+			<column name="USU_LOGIN" type="java.sql.Types.VARCHAR(30)"/>
+			<column name="USU_SENHA" type="java.sql.Types.VARCHAR(30)"/>
+			
+			<column name="USU_NOME" type="java.sql.Types.VARCHAR(30)"/>
+			<column name="USU_GENERO" type="java.sql.Types.VARCHAR(30)"/>
+			<column name="USU_FRASE" type="java.sql.Types.VARCHAR(30)"/>
+			<column name="USU_CIDADE" type="java.sql.Types.VARCHAR(30)"/>
+			<column name="USU_D_NASC" type="java.sql.Types.Date"/>					
+		</createTable>
+	</changeSet>
+		<changeSet id="20" author="safire">
+		<addPrimaryKey columnNames="ID" tableName="ANNA_Usuario"/>
+	</changeSet>
+
+</databaseChangeLog>

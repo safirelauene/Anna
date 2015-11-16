@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet id="10" author="Rodrigo Takeshi">
+		<createTable tableName="ANNA_COMENTARIO">
+			<column name="COM_ID" type="java.sql.Types.BIGINT"/>
+			<column name="COM_IDUSUARIO" type="java.sql.Types.BIGINT"/>
+			<column name="COM_IDPOST" type="java.sql.Types.BIGINT"/>
+			<column name="COM_DATA" type="java.sql.Types.DATE"/>
+			<column name="COM_CONTEUDO" type="java.sql.Types.VARCHAR(200)"/>		
+		</createTable>
+	</changeSet>
+		<changeSet id="20" author="tk">
+		<addPrimaryKey columnNames="COM_ID" tableName="ANNA_CURTIR"/>
+		<addForeignKeyConstraint constraintName="FK_COMENTARIO_USUARIO" referencedTableName="ANNA_USUARIO" baseColumnNames="USU_ID" baseTableName="ANNA_COMENTARIO" referencedColumnNames="COM_IDUSUARIO"/>
+		<addForeignKeyConstraint constraintName="FK_COMENTARIO_POST" referencedTableName="ANNA_POST" baseColumnNames="POS_ID" baseTableName="ANNA_COMENTARIO" referencedColumnNames="COM_IDPOST"/>
+	</changeSet>
+
+</databaseChangeLog>
